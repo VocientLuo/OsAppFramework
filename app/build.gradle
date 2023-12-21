@@ -1,0 +1,189 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+// 资源混淆器，侵入式混淆。
+apply plugin: "io.github.goldfish07.reschiper"
+
+def aabName = "${rootProject.ext.android.appName}_${rootProject.ext.android.appVersionName}"
+
+resChiper {
+    enableObfuscation = true //by default res obfuscate is enabled
+    obfuscationMode = "default" //["dir", "file", "default"]
+    obfuscatedBundleName = "${aabName}.aab" // Obfuscated file name, must end with '.aab'
+    //mappingFile = file("path/to/your/mapping.txt").toPath() // Mapping file used for incremental obfuscation
+    whiteList = [
+            // so库声明
+            "*/armeabi-v7a/*",
+            "*/arm64-v8a/*",
+            "*/x86/*",
+            "*/x86_64/*",
+            //Whitelist rule (directory name to exclude)
+            "res/raw", // raw dir will not be obfuscated
+            "res/xml", // xml dir will not be obfuscated
+
+            //Whitelist rule (file name to exclude)
+            "res/raw/*", // all files inside raw directory will not be obfuscated
+            "res/raw/success_tick.json", // success_tick.json file will not be obfuscated
+            "res/xml/*", // all files inside xml directory will not be obfuscated
+
+            // White list rules (resource name to exclude)
+            "*.R.raw.*",
+            "*.R.xml.*",
+
+            // for google-services
+            "*.R.string.google_api_key",
+            "*.R.string.google_app_id",
+            "*.R.string.default_web_client_id",
+            "*.R.string.gcm_defaultSenderId",
+            "*.R.string.ga_trackingId",
+            "*.R.string.firebase_database_url",
+            "*.R.string.google_crash_reporting_api_key",
+            "*.R.string.google_storage_bucket",
+            "*.R.integer.google_play_services_version",
+
+            //firebase
+            "*.R.string.project_id",
+            //firebase crashlytics
+            "*.R.string.com.google.firebase.crashlytics.mapping_file_id",
+            "*.R.bool.com.crashlytics.useFirebaseAppId",
+            "*.R.string.com.crashlytics.useFirebaseAppId",
+            "*.R.string.google_app_id",
+            "*.R.bool.com.crashlytics.CollectDeviceIdentifiers",
+            "*.R.string.com.crashlytics.CollectDeviceIdentifiers",
+            "*.R.bool.com.crashlytics.CollectUserIdentifiers",
+            "*.R.string.com.crashlytics.CollectUserIdentifiers",
+            "*.R.string.com.crashlytics.ApiEndpoint",
+            "*.R.string.com.crashlytics.android.build_id",
+            "*.R.bool.com.crashlytics.RequireBuildId",
+            "*.R.string.com.crashlytics.RequireBuildId",
+            "*.R.bool.com.crashlytics.CollectCustomLogs",
+            "*.R.string.com.crashlytics.CollectCustomLogs",
+            "*.R.bool.com.crashlytics.Trace",
+            "*.R.string.com.crashlytics.Trace",
+            "*.R.string.com.crashlytics.CollectCustomKeys"
+    ]
+    mergeDuplicateResources = true // allow the merge of duplicate resources
+    enableFileFiltering = false
+    enableFilterStrings = false
+    fileFilterList = [ // file filter rules
+                       "META-INF/*",
+                       "*/armeabi-v7a/*",
+                       "*/arm64-v8a/*",
+                       "*/x86/*",
+                       "*/x86_64/*"
+    ]
+    localeWhiteList = ["en", "in", "fr"] //keep en,en-xx,in,in-xx,fr,fr-xx and remove others locale.
+}
+
+// xml文件中的java类混淆器，源码级混淆，会直接改动源码。不要再master操作，避免失误！！！
+apply plugin: "xml-class-guard"
+xmlClassGuard {
+    /*
+     * 是否查找约束布局的constraint_referenced_ids属性的值，并添加到AabResGuard的白名单中，
+     * 是的话，要求你在XmlClassGuard前依赖AabResGuard插件，默认false
+     */
+    findAabConstraintReferencedIds = false
+
+    /*
+     * 是否查找约束布局的constraint_referenced_ids属性的值，并添加到AndResGuard的白名单中，
+     * 是的话，要求你在XmlClassGuard前依赖AndResGuard插件，默认false
+     */
+    findAndConstraintReferencedIds = false
+    //用于增量混淆的 mapping 文件
+    mappingFile = file("xml-class-mapping.txt")
+}
+
+
+android {
+    namespace rootProject.ext.android.appPackageName
+
+    compileSdk rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.android.appPackageName
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.appVersionCode
+        versionName rootProject.ext.android.appVersionName
+
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+    }
+
+    signingConfigs {
+        debug {
+            v1SigningEnabled true
+            v2SigningEnabled true
+            storeFile file('../store/oskeystore.jks')
+            storePassword '123456789'
+            keyAlias 'oskeystore'
+            keyPassword '123456789'
+        }
+
+        release {
+            v1SigningEnabled true
+            v2SigningEnabled true
+            storeFile file('../store/oskeystore.jks')
+            storePassword '123456789'
+            keyAlias 'oskeystore'
+            keyPassword '123456789'
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    flavorDimensions "market"
+
+    productFlavors {
+        google {
+            manifestPlaceholders = [
+                    APP_NAME           : rootProject.ext.android.appName,
+            ]
+            buildConfigField "String", "APP_NAME", "\"${rootProject.ext.android.appName}\""
+            buildConfigField "String", "PRIVACY_URL", "\"${rootProject.ext.android.privacyPolicy}\""
+            buildConfigField "String", "USER_PROTOCOL", "\"${rootProject.ext.android.userProtocol}\""
+            dimension "market"
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ':module_home')
+    implementation project(path: ':lib_base')
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+//
+//    api platform('com.google.firebase:firebase-bom:31.2.3')
+//    api 'com.google.firebase:firebase-analytics-ktx'
+}

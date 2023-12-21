@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Framework</string>
+
+    <string name="privacyTipsText">Welcome to use our app! \n We attach great importance to protecting your personal information and privacy security. When you use our products or services, we may collect and use your relevant information. We will not sell or rent any of your information without your consent. To ensure the quality and safety of the apps operation. \n Please carefully read and fully understand our User Agreement and Privacy Policy. If you agree, please click "Agree" to begin accepting our services.</string>
+
+
+    <string name="customer_server_desc">Dear user, the online time of manual customer service is from 09:00 to 12:00 am and from 14:00 to 18:00 pm on weekdays. If you have any questions about the online time of non manual customer service, please leave a message first. The customer service sister will answer you as soon as she starts working.^_^</string>
+    <string name="permission_tips">Permission granted before use</string>
+
+    <string name="setting_contact_us">Contact us</string>
+    <string name="setting_about_us">About us</string>
+    <string name="setting_privacy">Privacy policy</string>
+    <string name="setting_protocol">User protocol</string>
+
+    <string name="dialog_btn_agree">Agree</string>
+    <string name="dialog_title">Tips</string>
+    <string name="dialog_btn_cancel">No,exit</string>
+</resources>

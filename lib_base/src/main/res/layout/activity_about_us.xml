@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/about_bg_color"
+    android:fitsSystemWindows="true">
+
+    <com.xluo.base.widget.MyActionBar
+        android:id="@+id/myActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:action_bar_background="@color/about_actionBar_bg_color"
+        app:barlefticon="@drawable/icon_shape_permission_white"
+        app:batTitle="@string/setting_about_us"
+        app:title_color="@color/about_title_text_color"
+        />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/icon_logo"
+        android:layout_below="@+id/myActionBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="74dp" />
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/app_name"
+        android:textColor="@color/about_title_text_color"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/appVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_round_bolder_bg"
+        android:paddingStart="10dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="2dp"
+        android:text="1.0.0"
+        android:textColor="#999999"
+        android:textSize="12sp" />
+
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stPrivacy"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/appVersion"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        app:sBackgroundDrawableRes="@color/privacyBtnColor"
+        app:sBottomDividerLineMarginLeft="60dp"
+        app:sBottomDividerLineMarginRight="30dp"
+        app:sDividerLineType="none"
+        app:sLeftIconMarginLeft="30dp"
+        app:sLeftIconWidth="20dp"
+        android:visibility="gone"
+        app:sLeftTextColor="#ffffff"
+        app:sLeftTextSize="16sp"
+        app:sLeftTextString="隐私政策"
+        app:sRightIconMarginRight="30dp"
+        app:sRightIconRes="@drawable/icon_disclosure"
+        app:sRightIconWidth="12dp"
+        app:sShapeCornersRadius="8dp"
+        app:sShapeSelectorNormalColor="@color/privacyBtnColor"
+        app:sShapeSelectorPressedColor="@color/privacyBtnColor"
+        app:sUseShape="true" />
+
+</RelativeLayout>

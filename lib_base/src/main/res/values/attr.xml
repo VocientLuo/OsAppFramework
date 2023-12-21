@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MyActionBar">
+        <attr name="batTitle" format="string" />
+        <attr name="barlefticon" format="reference" />
+        <attr name="righticon" format="reference" />
+        <attr name="rightmenuname" format="string" />
+        <attr name="rightmenuname_color" format="color|reference" />
+        <attr name="title_color" format="color|reference" />
+        <attr name="action_bar_background" format="color|reference" />
+        <attr name="show_left_icon" format="boolean" />
+    </declare-styleable>
+
+
+</resources>

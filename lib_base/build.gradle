@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.xluo.base'
+    compileSdk rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    api rootProject.ext.library.appcompat
+    api rootProject.ext.library.corektx
+    api rootProject.ext.library.constraintlayout
+    api rootProject.ext.library.recyclerview
+    api rootProject.ext.library.viewpager2
+
+    api rootProject.ext.library.mmkv
+    api rootProject.ext.library.utilcodex
+    api rootProject.ext.library.gson
+    api rootProject.ext.library.superTextView
+    api rootProject.ext.library.eventbus
+
+    api rootProject.ext.library.glide
+    annotationProcessor rootProject.ext.library.glidecompiler
+}

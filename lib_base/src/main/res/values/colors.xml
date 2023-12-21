@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryVariant">#FFFFFF</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#0A84FF</color>
+    <color name="colorSecondaryVariant">#FFFFFF</color>
+    <color name="colorOnSecondary">#000000</color>
+
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#0A84FF</color>
+
+    <color name="host_white">#ffffff</color>
+    <color name="host_black">#000000</color>
+
+
+    <color name="host_tab_selected_color">#333333</color>
+    <color name="host_tab_un_select_color">#a1a1a1</color>
+
+    <color name="module_main_bg_color">#141416</color>
+
+    <color name="bottom_edit_bg_color">#191432</color>
+    <color name="other_text_color">#999999</color>
+
+    <color name="md_launcherBg">#1D172F</color>
+
+    <color name="mainBgColor">#191432</color>
+    <color name="tabBarColor">#141416</color>
+    <color name="tabTitleColor">#ffffff</color>
+    <color name="menuColor">#ffffff</color>
+    <color name="privacyBtnColor">#242428</color>
+    <color name="default_tips_text_color">#20DEDEDE</color>
+
+    <color name="feedback_white">#FFFFFF</color>
+    <color name="feedback_black">#000000</color>
+    <color name="feedback_gray">#7D7D7D</color>
+    <color name="feedback_grey">#9F9F9F</color>
+    <color name="feedback_zise">#331791</color>
+    <color name="feedback_yellow">#FBE691</color>
+    <color name="feedback_little_zise">#8A7AC0</color>
+    <color name="feedback_line">#E9E9E9</color>
+    <color name="feedback_zongse">#5B4C3A</color>
+    <color name="feedback_little_zongse">#948676</color>
+    <color name="feedback_2_bg">#23262A</color>
+    <color name="feedback_5_bg">#F6EEE4</color>
+
+    <color name="feedbackbg">#F6F5F5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="black3">#333333</color>
+    <color name="black6">#666666</color>
+    <color name="black9">#999999</color>
+    <color name="black_e">#eeeeee</color>
+    <color name="gray">#999999</color>
+    <color name="feedback_qs_sel">#0A84FF</color>
+    <color name="feedback_qs_nor">#666666</color>
+    <color name="feedback_qs_red">#FF0000</color>
+    <color name="feedbackbg_black">#030303</color>
+
+    <!--关于我们页面背景颜色-->
+    <color name="about_bg_color">#FFFFFF</color>
+    <!--关于我们页面标题文字颜色-->
+    <color name="about_title_text_color">#000000</color>
+    <!--关于我们页面ActionBar背景颜色-->
+    <color name="about_actionBar_bg_color">#FFFFFF</color>
+
+    <!--隐私协议页面背景颜色-->
+    <color name="privacy_bg_color">#FFFFFF</color>
+
+    <!--提示弹窗背景颜色-->
+    <color name="tips_dialog_bg_color">#FFFFFF</color>
+    <!--提示弹窗标题文字颜色-->
+    <color name="tips_dialog_title_color">#000000</color>
+    <!--提示弹窗取消按钮颜色-->
+    <color name="tips_dialog_cancel_color">#DEDEDE</color>
+
+</resources>

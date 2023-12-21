@@ -1,0 +1,20 @@
+buildscript {
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0"
+        classpath "com.github.liujingxing:XmlClassGuard:1.2.4"
+        classpath "io.github.goldfish07.reschiper:plugin:0.1.0-rc4"
+    }
+}
+
+plugins {
+    id 'com.android.application' version '8.1.0' apply false
+    id 'com.android.library' version '8.1.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.0' apply false
+}
+
+apply from: "extconfig.gradle"
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

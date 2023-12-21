@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/privacy_bg_color"
+    android:fitsSystemWindows="true">
+
+
+    <com.xluo.base.widget.MyActionBar
+        android:id="@+id/myActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:action_bar_background="@color/about_actionBar_bg_color"
+        app:barlefticon="@drawable/icon_shape_permission_white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:show_left_icon="true"
+        app:title_color="@color/about_title_text_color" />
+
+    <com.xluo.base.widget.ProgressView
+        android:id="@+id/myWebView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myActionBar"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Framework</string>
+
+    <string name="privacyTipsText">欢迎您使用我们的APP！\n我们非常重视保护您的个人信息和隐私安全。您在使用我们的产品或服务时，我们可能会收集和使用您的相关信息。未经您同意，我们不会出售或出租您的任何信息。为保证APP的运行质量与安全，我们的产品集成了Google SDK，SDK将采集您的设备信息。\n\n请您务必仔细阅读并充分了解我们的《用户协议》及《隐私政策》。如您同意请点击“同意”开始接受我们的服务。</string>
+
+
+    <string name="customer_server_desc">尊敬的用户，人工客服在线时间：工作日上午09：00-12：00 及下午14：00-18:00，非人工客服在线时间有疑问请先留言，客服小姐姐上班第一时间为您解答。^_^</string>
+    <string name="permission_tips">授予权限后才能使用</string>
+
+    <string name="setting_contact_us">联系我们</string>
+    <string name="setting_about_us">关于我们</string>
+    <string name="setting_privacy">隐私政策</string>
+    <string name="setting_protocol">用户协议</string>
+    <string name="dialog_btn_agree">同意</string>
+    <string name="dialog_title">温馨提示</string>
+    <string name="dialog_btn_cancel">不同意</string>
+</resources>
