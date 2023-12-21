@@ -1,4 +1,7 @@
+[img](./lib_base/src/main/res/mipmap-xxhdpi/icon_logo.png)
+
 # 海外包框架
+---
 
 4层混淆加密功能：
 * 第一层：proguard-rules自带混淆；
@@ -12,7 +15,7 @@
 第一二层混淆，自研源码和第三方sdk在proguard文件中注意添加排除混淆即可。
 
 第三层混淆执行 xmlClassGuardGoogleRelease任务，这是个修改源码的任务，不要在master上执行，可自行开分支执行。
-执行后可能部分类会遗漏导致报错，按照报错提示把相应的类名和文件名称改成一致即可，部分package 可能也需要修改。
+执行后可能部分类会遗漏导致报错，按照报错提示把相应的类名和文件名称改成一致即可，部分package可能也需要修改。
 这一步很重要，因为这一步把四大组件也混淆了。可以看看前后对比
 执行前：
 [img](./screenshot/before_xmlguard.png)
