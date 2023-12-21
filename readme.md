@@ -5,9 +5,13 @@
 
 4层混淆加密功能：
 * 第一层：proguard-rules自带混淆；
+
 * 第二层：增加dic.txt超级混淆字典，我称之为甜甜圈字典，因为全是0o圈符号；
+
 ![img](./screenshot/tiantianquan.png)
+
 * 第三层：XmlClassGuard混淆，对xml文件中嵌套的class进行混淆；
+
 * 第四层：ResChiper混淆
 
 # 使用说明
