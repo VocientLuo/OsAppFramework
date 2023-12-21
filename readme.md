@@ -25,9 +25,11 @@
 这一步很重要，因为这一步把四大组件也混淆了。可以看看前后对比
 
 执行前：
+
 ![img](./screenshot/before_xmlguard.png)
 
 执行后：
+
 ![img](./screenshot/after_xmlguard.png)
 
 区别很大。
