@@ -36,7 +36,6 @@ dependencies {
     api rootProject.ext.library.utilcodex
     api rootProject.ext.library.gson
     api rootProject.ext.library.superTextView
-    api rootProject.ext.library.eventbus
 
     api rootProject.ext.library.glide
     annotationProcessor rootProject.ext.library.glidecompiler
