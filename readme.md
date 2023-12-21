@@ -46,7 +46,9 @@
 ./gradlew app:resChiperGoogleRelease
 ```
 这一步会清理无用资源，同时混淆res下的所有文件。
+
 ![img](./screenshot/reschiper.png)
+
 资源文件只对文件路径和文件名做字典混淆，
 
 
