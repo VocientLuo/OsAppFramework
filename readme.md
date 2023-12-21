@@ -53,3 +53,13 @@
 
 
 最终得到的appName_versionName.aab即为可发布包
+
+---
+
+用到的插件：
+
+[XmlClassGuard](https://github.com/liujingxing/XmlClassGuard)
+[ResChiper](https://github.com/goldfish07/ResChiper)
+
+
+
