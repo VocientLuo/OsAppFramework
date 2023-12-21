@@ -27,9 +27,6 @@ import com.tencent.mmkv.MMKV;
 
 import java.util.Locale;
 
-/**
- * 隐私政策弹框
- */
 public class PrivacyAgreementDialog extends Dialog implements View.OnClickListener {
 
     private PrivacyDialogConfig.PrivacyDialogListener privacyDialogListener;

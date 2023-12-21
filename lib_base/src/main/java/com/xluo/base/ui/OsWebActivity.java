@@ -23,12 +23,6 @@ public class OsWebActivity extends BaseActivity {
     private static final String privacyUrl = "https://www.baidu.com";
     private static final String userProtocolUrl = "https://www.baidu.com";
 
-    /**
-     * 跳转协议
-     *
-     * @param context
-     * @param type
-     */
     public static void start(Context context, PrivacyConstantsUtils.ProtocolType type) {
         Intent intent = new Intent(context, OsWebActivity.class);
         intent.putExtra(TYPE, type.name());
